@@ -67,16 +67,21 @@ class BlockChain(object):
         if sender_blockchain_address == MINING_SENDER:
             self.transaction_pool.append(transaction)
             return True
-        
+
         # verifyしてokなら
         if self.verify_transaction_signature(
-            sender_public_key, signature, transaction):
+                sender_public_key, signature, transaction):
+            # 送り金がない場合
+            # if self.calculate_total_amount(sender_blockchain_address) < float(value):
+            #     logger.error(
+            #         {'action': 'add_transaction', 'error': 'no_value'})
+            #     return False
             self.transaction_pool.append(transaction)
             return True
         return False
 
     def verify_transaction_signature(
-        self, sender_public_key, signature, transaction):
+            self, sender_public_key, signature, transaction):
         sha256 = hashlib.sha256()
         sha256.update(str(transaction).encode("utf-8"))
         message = sha256.digest()
