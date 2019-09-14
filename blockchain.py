@@ -1,8 +1,10 @@
+import contextlib
 import hashlib
 import json
 import logging
 import sys
 import time
+import threading
 
 from ecdsa import NIST256p
 from ecdsa import VerifyingKey
@@ -12,6 +14,7 @@ import utils
 MINING_DIFFICULTY = 3
 MINING_SENDER = "THE BLOCKCHAIN"
 MINING_REWARD = 1.0
+MINING_TIMER_SEC = 20
 
 # コンソール上にもログを出力する
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
@@ -30,6 +33,8 @@ class BlockChain(object):
         self.blockchain_address = blockchain_address
         # 複数サーバーの代わりにポートを複数開ける
         self.port = port
+        # 並列処理をするプロセスが1つだけ
+        self.mining_semaphore = threading.Semaphore(1)
 
     # blockの作成
     def create_block(self, nonce, previous_hash):
@@ -130,6 +135,10 @@ class BlockChain(object):
         return nonce
 
     def mining(self):
+        # 空のtransactionの時はマイニングにしないようにする
+        if not self.transaction_pool:
+            return False
+
         self.add_transaction(
             sender_blockchain_address=MINING_SENDER,
             recipient_blockchain_address=self.blockchain_address,
@@ -141,6 +150,18 @@ class BlockChain(object):
         # logサーチするのに良い記法
         logger.info({"action": "mining", "status": "success"})
         return True
+
+    def start_mining(self):
+        # blocking=Trueにすると待ち行列になる
+        # self-miningは1つだけ
+        is_acquire = self.mining_semaphore.acquire(blocking=False)
+        if is_acquire:
+            with contextlib.ExitStack() as stack:
+                stack.callback(self.mining_semaphore.release)
+                self.mining()
+                # 擬似的にマイニングの時間を設定
+                loop = threading.Timer(MINING_TIMER_SEC, self.start_mining)
+                loop.start()
 
     def calculate_total_amount(self, blockchain_address):
         total_amount = 0.0
