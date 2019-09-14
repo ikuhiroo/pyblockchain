@@ -22,12 +22,14 @@ logger = logging.getLogger(__name__)
 
 class BlockChain(object):
     # blockchainクラスの作成
-    def __init__(self, blockchain_address=None):
+    def __init__(self, blockchain_address=None, port=None):
         self.transaction_pool = []
         self.chain = []
         # 初期値
         self.create_block(0, self.hash({}))
         self.blockchain_address = blockchain_address
+        # 複数サーバーの代わりにポートを複数開ける
+        self.port = port
 
     # blockの作成
     def create_block(self, nonce, previous_hash):

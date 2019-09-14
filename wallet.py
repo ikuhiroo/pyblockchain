@@ -42,7 +42,7 @@ class Wallet(object):
         ripemd160_bpk = hashlib.new("ripemd160")
         ripemd160_bpk.update(sha256_bpk_digest)
         ripemd160_bpk_digest = ripemd160_bpk.digest()
-        ripemd160_bpk_hex = codecs.encode(ripemd160_bpk_digest, 'hex')
+        ripemd160_bpk_hex = codecs.encode(ripemd160_bpk_digest, "hex")
 
         # 4. Add network byte
         network_byte = b"00"
@@ -86,7 +86,7 @@ class Transaction(object):
             "value": float(self.value)
         })
         # sha256のupdate
-        sha256.update(str(transaction).encode('utf-8'))
+        sha256.update(str(transaction).encode("utf-8"))
         # hashのメッセージ
         message = sha256.digest()
         # private_keyの作成
