@@ -24,7 +24,7 @@ def pprint(chains):
         print(f'{"="*25} Chain {i} {"="*25}')
         # kとvの幅を揃える
         for k, v in chain.items():
-            if k == "transaction":
+            if k == "transactions":
                 print(k)
                 for d in v:
                     print(f'{"-"*40}')
