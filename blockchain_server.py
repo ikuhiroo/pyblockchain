@@ -78,6 +78,15 @@ def transaction():
         return jsonify({"message": "success"}), 201
 
 
+@app.route("/mine", methods=["GET"])
+def mine():
+    block_chain = get_blockchain()
+    is_mined = block_chain.mining()
+    if is_mined:
+        return jsonify({"message": "success"}), 200
+    return jsonify({"message": "fail"}), 400
+
+
 if __name__ == "__main__":
     # スクリプトを実行する場合のオプションを指定
     # オプションがない場合はdefault値が用いられる
