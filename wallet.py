@@ -2,7 +2,6 @@ import base58
 import codecs
 import hashlib
 
-
 from ecdsa import NIST256p
 from ecdsa import SigningKey
 
@@ -43,10 +42,10 @@ class Wallet(object):
         ripemd160_bpk = hashlib.new("ripemd160")
         ripemd160_bpk.update(sha256_bpk_digest)
         ripemd160_bpk_digest = ripemd160_bpk.digest()
-        ripemd160_bpk_hex = codecs.encode(ripemd160_bpk_digest, "hex")
+        ripemd160_bpk_hex = codecs.encode(ripemd160_bpk_digest, 'hex')
 
         # 4. Add network byte
-        network_byte = b"00"  # mainとtestに分けるとき，mainは00
+        network_byte = b"00"
         network_bitcoin_public_key = network_byte + ripemd160_bpk_hex
         network_bitcoin_public_key_bytes = codecs.decode(
             network_bitcoin_public_key, "hex")
@@ -71,7 +70,8 @@ class Wallet(object):
 
 class Transaction(object):
 
-    def __init__(self, sender_private_key, sender_public_key, sender_blockchain_address, recipient_blockchain_address, value):
+    def __init__(self, sender_private_key, sender_public_key,
+                 sender_blockchain_address, recipient_blockchain_address, value):
         self.sender_private_key = sender_private_key
         self.sender_public_key = sender_public_key
         self.sender_blockchain_address = sender_blockchain_address
@@ -82,11 +82,11 @@ class Transaction(object):
         sha256 = hashlib.sha256()
         transaction = utils.sorted_dict_by_key({
             "sender_blockchain_address": self.sender_blockchain_address,
-            "sender_blockchain_address": self.sender_blockchain_address,
+            "recipient_blockchain_address": self.recipient_blockchain_address,
             "value": float(self.value)
         })
         # sha256のupdate
-        sha256.update(str(transaction).encode("utf-8"))
+        sha256.update(str(transaction).encode('utf-8'))
         # hashのメッセージ
         message = sha256.digest()
         # private_keyの作成
@@ -100,12 +100,28 @@ class Transaction(object):
 
 
 if __name__ == "__main__":
-    wallet = Wallet()
-    # メソッドとは異なり()は不要
-    print(wallet.private_key)
-    print(wallet.public_key)
-    print(wallet.blockchain_address)
+    wallet_M = Wallet()
+    wallet_A = Wallet()
+    wallet_B = Wallet()
     t = Transaction(
-        wallet.private_key, wallet.public_key, wallet.generate_blockchain_address, "B", 1.0
+        wallet_A.private_key, wallet_A.public_key, wallet_A.blockchain_address,
+        wallet_B.blockchain_address, 1.0
     )
-    print(t.generate_signature())
+
+    # Blockchain Node (本来はRestなどで投げる)
+    import blockchain
+    block_chain = blockchain.BlockChain(
+        blockchain_address=wallet_M.blockchain_address)
+    is_added = block_chain.add_transaction(
+        wallet_A.blockchain_address,
+        wallet_B.blockchain_address,
+        1.0,
+        wallet_A.public_key,
+        t.generate_signature()
+    )
+    print("Added?", is_added)
+    block_chain.mining()
+    utils.pprint(block_chain.chain)
+
+    print("A", block_chain.calculate_total_amount(wallet_A.blockchain_address))
+    print("B", block_chain.calculate_total_amount(wallet_B.blockchain_address))
