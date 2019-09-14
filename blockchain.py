@@ -82,6 +82,22 @@ class BlockChain(object):
             return True
         return False
 
+    # add_transactionと同じ内容だが
+    # 他のノードに同期させたい
+    # miningの場合は同期はしない
+    def create_transaction(self, sender_blockchain_address,
+                           recipient_blockchain_address, value,
+                           sender_public_key, signature):
+
+        is_transacted = self.add_transaction(
+            sender_blockchain_address, recipient_blockchain_address,
+            value, sender_public_key, signature)
+
+        # TODO
+        # Sync
+
+        return is_transacted
+
     def verify_transaction_signature(
             self, sender_public_key, signature, transaction):
         sha256 = hashlib.sha256()
