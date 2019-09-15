@@ -5,6 +5,7 @@ import logging
 import sys
 import time
 import threading
+import requests
 
 from ecdsa import NIST256p
 from ecdsa import VerifyingKey
@@ -33,6 +34,7 @@ class BlockChain(object):
         self.transaction_pool = []
         self.chain = []
         # 初期値
+        self.neighbours = []
         self.create_block(0, self.hash({}))
         self.blockchain_address = blockchain_address
         # 複数サーバーの代わりにポートを複数開ける
@@ -40,7 +42,6 @@ class BlockChain(object):
         # 並列処理をするプロセスが1つだけ
         self.mining_semaphore = threading.Semaphore(1)
         # 付近のノードを同期させる
-        self.neighbours = []
         self.sync_neighbours_semaphore = threading.Semaphore(1)
 
     def set_neighbours(self):
@@ -72,6 +73,11 @@ class BlockChain(object):
         })
         self.chain.append(block)
         self.transaction_pool = []
+
+        # 同期させる
+        for node in self.neighbours:
+            requests.delete(f'http://{node}/transactions')
+
         return block
 
     def hash(self, block):
@@ -124,8 +130,19 @@ class BlockChain(object):
             sender_blockchain_address, recipient_blockchain_address,
             value, sender_public_key, signature)
 
-        # TODO
-        # Sync
+        # 同期
+        if is_transacted:
+            for node in self.neighbours:
+                requests.put(
+                    f"http://{node}/transactions",
+                    json={
+                        "sender_blockchain_address": sender_blockchain_address,
+                        "recipient_blockchain_address": recipient_blockchain_address,
+                        "value": value,
+                        "sender_public_key": sender_public_key,
+                        "signature": signature,
+                    }
+                )
 
         return is_transacted
 
@@ -192,10 +209,10 @@ class BlockChain(object):
     def calculate_total_amount(self, blockchain_address):
         total_amount = 0.0
         for block in self.chain:
-            for transaction in block['transactions']:
-                value = float(transaction['value'])
-                if blockchain_address == transaction['recipient_blockchain_address']:
+            for transaction in block["transactions"]:
+                value = float(transaction["value"])
+                if blockchain_address == transaction["recipient_blockchain_address"]:
                     total_amount += value
-                if blockchain_address == transaction['sender_blockchain_address']:
+                if blockchain_address == transaction["sender_blockchain_address"]:
                     total_amount -= value
         return total_amount
