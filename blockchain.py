@@ -16,6 +16,10 @@ MINING_SENDER = "THE BLOCKCHAIN"
 MINING_REWARD = 1.0
 MINING_TIMER_SEC = 20
 
+BLOCKCHAIN_PORT_RANGE = (5000, 5003)
+NEIGHBOURS_IP_RANGE_NUM = (0, 1)
+BLOCKCHAIN_NEIGHBOURS_SYNC_TIME_SEC = 20
+
 # コンソール上にもログを出力する
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 # loggingではなくてloggerにする
@@ -35,6 +39,28 @@ class BlockChain(object):
         self.port = port
         # 並列処理をするプロセスが1つだけ
         self.mining_semaphore = threading.Semaphore(1)
+        # 付近のノードを同期させる
+        self.neighbours = []
+        self.sync_neighbours_semaphore = threading.Semaphore(1)
+
+    def set_neighbours(self):
+        self.neighbours = utils.find_neighbours(
+            utils.get_host(), self.port,
+            NEIGHBOURS_IP_RANGE_NUM[0], NEIGHBOURS_IP_RANGE_NUM[1],
+            BLOCKCHAIN_PORT_RANGE[0], BLOCKCHAIN_PORT_RANGE[1])
+        logger.info({"action": "set_neighbours",
+                     "neighbours": self.neighbours})
+
+    def sync_neighbours(self):
+        "set_neighboursをBLOCKCHAIN_NEIGHBOURS_SYNC_TIME_SECごとに呼び出す"
+        is_acquire = self.sync_neighbours_semaphore.acquire(blocking=False)
+        if is_acquire:
+            with contextlib.ExitStack() as stack:
+                stack.callback(self.sync_neighbours_semaphore.release)
+                self.set_neighbours()
+                loop = threading.Timer(
+                    BLOCKCHAIN_NEIGHBOURS_SYNC_TIME_SEC, self.sync_neighbours)
+                loop.start()
 
     # blockの作成
     def create_block(self, nonce, previous_hash):
