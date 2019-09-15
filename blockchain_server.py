@@ -122,6 +122,14 @@ def start_mine():
     return jsonify({'message': 'success'}), 200
 
 
+@app.route('/consensus', methods=['PUT'])
+# 最も長いchainを採用
+def consensus():
+    block_chain = get_blockchain()
+    replaced = block_chain.resolve_conflicts()
+    return jsonify({'replaced': replaced}), 200
+
+
 if __name__ == "__main__":
     # スクリプトを実行する場合のオプションを指定
     # オプションがない場合はdefault値が用いられる
@@ -135,7 +143,7 @@ if __name__ == "__main__":
 
     app.config["port"] = port
 
-    get_blockchain().sync_neighbours()
+    get_blockchain().run()
 
     # 同時リクエストを引き受ける
     app.run(host="0.0.0.0", port=port, threaded=True, debug=True)
