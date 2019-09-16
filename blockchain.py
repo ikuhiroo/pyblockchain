@@ -116,11 +116,13 @@ class BlockChain(object):
         # verifyしてokなら
         if self.verify_transaction_signature(
                 sender_public_key, signature, transaction):
+            
             # 送り金がない場合
-            # if self.calculate_total_amount(sender_blockchain_address) < float(value):
-            #     logger.error(
-            #         {'action': 'add_transaction', 'error': 'no_value'})
-            #     return False
+            if self.calculate_total_amount(sender_blockchain_address) < float(value):
+                logger.error(
+                    {'action': 'add_transaction', 'error': 'no_value'})
+                return False
+
             self.transaction_pool.append(transaction)
             return True
         return False
@@ -185,8 +187,9 @@ class BlockChain(object):
 
     def mining(self):
         # 空のtransactionの時はマイニングにしないようにする
-        if not self.transaction_pool:
-            return False
+        # 実際はtransactionがなくてもマイニングする
+        # if not self.transaction_pool:
+        #     return False
 
         self.add_transaction(
             sender_blockchain_address=MINING_SENDER,
