@@ -130,6 +130,14 @@ def consensus():
     return jsonify({'replaced': replaced}), 200
 
 
+@app.route('/amount', methods=['GET'])
+def get_total_amount():
+    blockchain_address = request.args['blockchain_address']
+    return jsonify({
+        'amount': get_blockchain().calculate_total_amount(blockchain_address)
+    }), 200
+
+
 if __name__ == "__main__":
     # スクリプトを実行する場合のオプションを指定
     # オプションがない場合はdefault値が用いられる

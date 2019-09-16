@@ -29,6 +29,7 @@ logger = logging.getLogger(__name__)
 
 
 class BlockChain(object):
+    "どのノードから見ているかを確認"
     # blockchainクラスの作成
     def __init__(self, blockchain_address=None, port=None):
         self.transaction_pool = []
