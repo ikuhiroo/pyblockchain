@@ -11,9 +11,16 @@ cache = {}
 
 
 def get_blockchain():
-    # blockchainの情報は本来DBに入れる
-    # 今回はglobalにchcheに入れる
-    # すぐに呼び出せるようにする
+    """
+    Blockの情報を取得する
+
+    blockchainの情報は本来DBに入れる
+    今回はglobalに格納する
+
+    See Also
+    --------
+    cache : dict
+    """
     cached_blockchain = cache.get("blockchain")
     # １度しか呼ばれない
     if not cached_blockchain:
@@ -32,6 +39,15 @@ def get_blockchain():
 
 @app.route("/chain", methods=["GET"])
 def get_chain():
+    """
+    Blockの情報を取得する
+
+    See Also
+    --------
+    response : dict
+        key: "chain"
+        val: list in dict
+    """
     block_chain = get_blockchain()
     response = {
         "chain": block_chain.chain
@@ -41,6 +57,13 @@ def get_chain():
 
 @app.route("/transactions", methods=['GET', 'POST', 'PUT', 'DELETE'])
 def transaction():
+    """
+    transactionのCRUD
+
+    See Also
+    --------
+    block_chain : dict
+    """
     block_chain = get_blockchain()
     if request.method == "GET":
         transactions = block_chain.transaction_pool
@@ -149,6 +172,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     port = args.port
 
+    # 設定ファイルの作成
     app.config["port"] = port
 
     get_blockchain().run()
