@@ -1,0 +1,953 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyblockchain 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html#document-index" class="icon icon-home"> pyblockchain
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-blockchain_server">blockchain_server module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-blockchain">blockchain module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-utils">utils module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-wallet_server">wallet_server module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-wallet">wallet module</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html#document-index">pyblockchain</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html#document-index">Docs</a> &raquo;</li>
+        
+      <li>pyblockchain 1.0.0 documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-pyblockchain-s-documentation">
+<h1>Welcome to pyblockchain’s documentation!<a class="headerlink" href="#welcome-to-pyblockchain-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<span id="document-blockchain_server"></span><div class="section" id="module-blockchain_server">
+<span id="blockchain-server-module"></span><h2>blockchain_server module<a class="headerlink" href="#module-blockchain_server" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="blockchain_server.consensus">
+<code class="sig-prename descclassname">blockchain_server.</code><code class="sig-name descname">consensus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain_server.consensus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="blockchain_server.get_blockchain">
+<code class="sig-prename descclassname">blockchain_server.</code><code class="sig-name descname">get_blockchain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain_server.get_blockchain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blockの情報を取得する</p>
+<p>blockchainの情報は本来DBに入れる
+今回はglobalに格納する</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">cache()</span></code></dt><dd><p>dict</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blockchain_server.get_chain">
+<code class="sig-prename descclassname">blockchain_server.</code><code class="sig-name descname">get_chain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain_server.get_chain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blockの情報を取得する</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">response()</span></code></dt><dd><p>dict</p>
+</dd>
+<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">key()</span></code></dt><dd><p>“chain”</p>
+</dd>
+<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">val()</span></code></dt><dd><p>list in dict</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blockchain_server.get_total_amount">
+<code class="sig-prename descclassname">blockchain_server.</code><code class="sig-name descname">get_total_amount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain_server.get_total_amount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="blockchain_server.mine">
+<code class="sig-prename descclassname">blockchain_server.</code><code class="sig-name descname">mine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain_server.mine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="blockchain_server.start_mine">
+<code class="sig-prename descclassname">blockchain_server.</code><code class="sig-name descname">start_mine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain_server.start_mine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="blockchain_server.transaction">
+<code class="sig-prename descclassname">blockchain_server.</code><code class="sig-name descname">transaction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain_server.transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>transactionのCRUD</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-func docutils literal notranslate"><span class="pre">block_chain()</span></code></dt><dd><p>dict</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+</div>
+<span id="document-blockchain"></span><div class="section" id="module-blockchain">
+<span id="blockchain-module"></span><h2>blockchain module<a class="headerlink" href="#module-blockchain" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="blockchain.BlockChain">
+<em class="property">class </em><code class="sig-prename descclassname">blockchain.</code><code class="sig-name descname">BlockChain</code><span class="sig-paren">(</span><em class="sig-param">blockchain_address=None</em>, <em class="sig-param">port=None</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>blockchainを構成する機能</p>
+<dl class="attribute">
+<dt id="blockchain.BlockChain.transaction_pool">
+<code class="sig-name descname">transaction_pool</code><a class="headerlink" href="#blockchain.BlockChain.transaction_pool" title="Permalink to this definition">¶</a></dt>
+<dd><p>mining前にtransactionを追加する場所</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of dicts</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.BlockChain.chain">
+<code class="sig-name descname">chain</code><a class="headerlink" href="#blockchain.BlockChain.chain" title="Permalink to this definition">¶</a></dt>
+<dd><p>block chain</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of dicts</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.BlockChain.neighbours">
+<code class="sig-name descname">neighbours</code><a class="headerlink" href="#blockchain.BlockChain.neighbours" title="Permalink to this definition">¶</a></dt>
+<dd><p>block chain serverとその情報</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.BlockChain.blockchain_address">
+<code class="sig-name descname">blockchain_address</code><a class="headerlink" href="#blockchain.BlockChain.blockchain_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>wallet serverのアドレス</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.BlockChain.port">
+<code class="sig-name descname">port</code><a class="headerlink" href="#blockchain.BlockChain.port" title="Permalink to this definition">¶</a></dt>
+<dd><p>wallet serverのlistenしているポート
+複数サーバーの代わりにポートを複数開ける</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.BlockChain.mining_semaphore">
+<code class="sig-name descname">mining_semaphore</code><a class="headerlink" href="#blockchain.BlockChain.mining_semaphore" title="Permalink to this definition">¶</a></dt>
+<dd><p>並列処理をするプロセスが1つだけ</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>threading</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.BlockChain.sync_neighbours_semaphore">
+<code class="sig-name descname">sync_neighbours_semaphore</code><a class="headerlink" href="#blockchain.BlockChain.sync_neighbours_semaphore" title="Permalink to this definition">¶</a></dt>
+<dd><p>付近のノードを同期させる</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>threading</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.add_transaction">
+<code class="sig-name descname">add_transaction</code><span class="sig-paren">(</span><em class="sig-param">sender_blockchain_address</em>, <em class="sig-param">recipient_blockchain_address</em>, <em class="sig-param">value</em>, <em class="sig-param">sender_public_key=None</em>, <em class="sig-param">signature=None</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.add_transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>transactionを追加する．
+ex. wallet A -&gt; wallet B に 1.0送金．</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sender_blockchain_address</strong> (<em>str</em>) – wallet Aのblockchain address</p></li>
+<li><p><strong>recipient_blockchain_address</strong> (<em>str</em>) – wallet Bのblockchain address</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – 1.0</p></li>
+<li><p><strong>sender_public_key</strong> (<em>str</em>) – </p></li>
+<li><p><strong>signature</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.calculate_total_amount">
+<code class="sig-name descname">calculate_total_amount</code><span class="sig-paren">(</span><em class="sig-param">blockchain_address</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.calculate_total_amount" title="Permalink to this definition">¶</a></dt>
+<dd><p>walletのビットコインを計算する．
+ex.
+MINING_SENDER -&gt; my_blockchain_address 10.0
+my_blockchain_address -&gt; A 5.0
+MINING_SENDER -&gt; my_blockchain_address 1.0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>blockchain_address</strong> (<em>str</em>) – </p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">block_chain</span> <span class="o">=</span> <span class="n">BlockChain</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_blockchain_address</span> <span class="o">=</span> <span class="s2">&quot;my_blockchain_address&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_chain</span> <span class="o">=</span> <span class="n">BlockChain</span><span class="p">(</span><span class="n">blockchain_address</span><span class="o">=</span><span class="n">my_blockchain_address</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_chain</span><span class="o">.</span><span class="n">transaction_pool</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;recipient_blockchain_address&quot;</span><span class="p">:</span> <span class="n">my_blockchain_address</span><span class="p">,</span> <span class="s2">&quot;sender_blockchain_address&quot;</span><span class="p">:</span> <span class="n">MINING_SENDER</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_chain</span><span class="o">.</span><span class="n">transaction_pool</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;recipient_blockchain_address&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;sender_blockchain_address&quot;</span><span class="p">:</span> <span class="n">my_blockchain_address</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">previous_hash</span> <span class="o">=</span> <span class="n">block_chain</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">block_chain</span><span class="o">.</span><span class="n">chain</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nonce</span> <span class="o">=</span> <span class="n">block_chain</span><span class="o">.</span><span class="n">proof_of_work</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">block_chain</span><span class="o">.</span><span class="n">create_block</span><span class="p">(</span><span class="n">nonce</span><span class="p">,</span> <span class="n">previous_hash</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_chain</span><span class="o">.</span><span class="n">mining</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">block_chain</span><span class="o">.</span><span class="n">calculate_total_amount</span><span class="p">(</span><span class="n">my_blockchain_address</span><span class="p">))</span>
+<span class="go">6.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">block_chain</span><span class="o">.</span><span class="n">calculate_total_amount</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">))</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.create_block">
+<code class="sig-name descname">create_block</code><span class="sig-paren">(</span><em class="sig-param">nonce</em>, <em class="sig-param">previous_hash</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.create_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blockを作成する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nonce</strong> (<em>int</em>) – </p></li>
+<li><p><strong>previous_hash</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>block</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">block_chain</span> <span class="o">=</span> <span class="n">BlockChain</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_1</span> <span class="o">=</span> <span class="n">block_chain</span><span class="o">.</span><span class="n">create_block</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;hash 1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_1</span><span class="p">[</span><span class="s1">&#39;nonce&#39;</span><span class="p">]</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_1</span><span class="p">[</span><span class="s1">&#39;previous_hash&#39;</span><span class="p">]</span>
+<span class="go">&#39;hash 1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_2</span> <span class="o">=</span> <span class="n">block_chain</span><span class="o">.</span><span class="n">create_block</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;hash 2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_2</span><span class="p">[</span><span class="s1">&#39;nonce&#39;</span><span class="p">]</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_2</span><span class="p">[</span><span class="s1">&#39;previous_hash&#39;</span><span class="p">]</span>
+<span class="go">&#39;hash 2&#39;</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.create_transaction">
+<code class="sig-name descname">create_transaction</code><span class="sig-paren">(</span><em class="sig-param">sender_blockchain_address</em>, <em class="sig-param">recipient_blockchain_address</em>, <em class="sig-param">value</em>, <em class="sig-param">sender_public_key</em>, <em class="sig-param">signature</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.create_transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>・add_transaction + 同期
+・miningの場合は同期はしない</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sender_blockchain_address</strong> (<em>str</em>) – wallet Aのblockchain address</p></li>
+<li><p><strong>recipient_blockchain_address</strong> (<em>str</em>) – wallet Bのblockchain address</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – 1.0</p></li>
+<li><p><strong>sender_public_key</strong> (<em>str</em>) – </p></li>
+<li><p><strong>signature</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>is_transacted</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.hash">
+<code class="sig-name descname">hash</code><span class="sig-paren">(</span><em class="sig-param">block</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>SHA-256 hash generator by double-check (sorted json dumps)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>block</strong> (<em>dict</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>hashlib.sha256(sorted_block.encode()).hexdigest()</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">block_init</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">block_init</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="go">&#39;44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">{&quot;a&quot;: 1, &quot;b&quot;: 2}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">block2</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">{&quot;a&quot;: 1, &quot;b&quot;: 2}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">block2</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="go">&#39;d8497d9d82770a70729261095aa98f7ef5154d7af499f8037b6ca250296785a6&#39;</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.mining">
+<code class="sig-name descname">mining</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.mining" title="Permalink to this definition">¶</a></dt>
+<dd><p>miningをし，blockを生成する．
+transactionが空の場合もminingを行う．</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">block_chain</span> <span class="o">=</span> <span class="n">BlockChain</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_blockchain_address</span> <span class="o">=</span> <span class="s2">&quot;my_blockchain_address&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_chain</span> <span class="o">=</span> <span class="n">BlockChain</span><span class="p">(</span><span class="n">blockchain_address</span><span class="o">=</span><span class="n">my_blockchain_address</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_init</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">previous_hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">block_init</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_chain</span><span class="o">.</span><span class="n">chain</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;nonce&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;previous_hash&quot;</span><span class="p">:</span> <span class="n">previous_hash</span><span class="p">,</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="mf">1568623709.059293</span><span class="p">,</span> <span class="s2">&quot;transactions&quot;</span><span class="p">:</span> <span class="p">[]}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_chain</span><span class="o">.</span><span class="n">transaction_pool</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;recipient_blockchain_address&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;sender_blockchain_address&quot;</span><span class="p">:</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nonce</span> <span class="o">=</span> <span class="n">block_chain</span><span class="o">.</span><span class="n">proof_of_work</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nonce</span>
+<span class="go">8636</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">previous_hash</span> <span class="o">=</span> <span class="n">block_chain</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">block_chain</span><span class="o">.</span><span class="n">chain</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">guess_block</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">sorted_dict_by_key</span><span class="p">({</span><span class="s2">&quot;transactions&quot;</span><span class="p">:</span> <span class="n">block_chain</span><span class="o">.</span><span class="n">transaction_pool</span><span class="p">,</span> <span class="s2">&quot;nonce&quot;</span><span class="p">:</span> <span class="n">nonce</span><span class="p">,</span> <span class="s2">&quot;previous_hash&quot;</span><span class="p">:</span> <span class="n">previous_hash</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block_chain</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">guess_block</span><span class="p">)</span>
+<span class="go">&#39;000494115f84a2b4e5526c65fe44364405f4af36e119ac75e1414f7da2f8f673&#39;</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.proof_of_work">
+<code class="sig-name descname">proof_of_work</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.proof_of_work" title="Permalink to this definition">¶</a></dt>
+<dd><p>nonceを計算できるまで繰り返し計算を行う</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.resolve_conflicts">
+<code class="sig-name descname">resolve_conflicts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.resolve_conflicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Consensus
+最も長いchainを採用する</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.set_neighbours">
+<code class="sig-name descname">set_neighbours</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.set_neighbours" title="Permalink to this definition">¶</a></dt>
+<dd><p>条件に沿ったnodeを検索する．</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">NEIGHBOURS_IP_RANGE_NUM()</span></code></dt><dd><p>tuple NEIGHBOURS_IP_RANGE_NUM[0] : int start_ip_range NEIGHBOURS_IP_RANGE_NUM[1] : int end_ip_range</p>
+</dd>
+<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">BLOCKCHAIN_PORT_RANGE()</span></code></dt><dd><p>tuple BLOCKCHAIN_PORT_RANGE[0] : int start_port BLOCKCHAIN_PORT_RANGE[1] : int end_port</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.start_mining">
+<code class="sig-name descname">start_mining</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.start_mining" title="Permalink to this definition">¶</a></dt>
+<dd><p>MINING_TIMER_SECごとにself-mining（start_mining）を行う</p>
+<p>・blocking=Trueにすると待ち行列になる
+・ExitStackを使うと，callbackが明示的に記述できて、必ず実行したい処理が一目見てわかる。</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">threading.Semaphore()</span></code></p>
+<dl class="simple">
+<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">MINING_TIMER_SEC()</span></code></dt><dd><p>擬似的にマイニングの時間を設定</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.sync_neighbours">
+<code class="sig-name descname">sync_neighbours</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.sync_neighbours" title="Permalink to this definition">¶</a></dt>
+<dd><p>set_neighboursを並列処理する
+BLOCKCHAIN_NEIGHBOURS_SYNC_TIME_SECごとにsync_neighbours()を呼び出す</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">BLOCKCHAIN_NEIGHBOURS_SYNC_TIME_SEC()</span></code></dt><dd><p>int</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.valid_chain">
+<code class="sig-name descname">valid_chain</code><span class="sig-paren">(</span><em class="sig-param">chain</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.valid_chain" title="Permalink to this definition">¶</a></dt>
+<dd><p>blockのvalidation check</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>chain</strong> (<em>list in dict</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.valid_proof">
+<code class="sig-name descname">valid_proof</code><span class="sig-paren">(</span><em class="sig-param">transactions</em>, <em class="sig-param">previous_hash</em>, <em class="sig-param">nonce</em>, <em class="sig-param">difficulty=3</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.valid_proof" title="Permalink to this definition">¶</a></dt>
+<dd><p>nonceを計算する．</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transactions</strong> (<em>list of dicts</em>) – [{“recipient_blockchain_address”: str, “sender_blockchain_address”: str, “value”: float}]</p></li>
+<li><p><strong>previous_hash</strong> (<em>str</em>) – hash化（[{“nonce”: int, “previous_hash”: str, “timestamp”: float, “transactions”: list}]）</p></li>
+<li><p><strong>nonce</strong> (<em>int</em>) – サーチ対象</p></li>
+<li><p><strong>difficulty</strong> (<em>int</em>) – miningの難易度．hash化した文字列の先頭”0”の連続数</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.BlockChain.verify_transaction_signature">
+<code class="sig-name descname">verify_transaction_signature</code><span class="sig-paren">(</span><em class="sig-param">sender_public_key</em>, <em class="sig-param">signature</em>, <em class="sig-param">transaction</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.BlockChain.verify_transaction_signature" title="Permalink to this definition">¶</a></dt>
+<dd><p>transactionの証明を行う</p>
+<p>公開鍵とsignatureとtransactionsから証明する
+1. message: transactionsをSHA-256でハッシュ化（bytes）し，16進数文字列化
+2. signature_bytes: signatureをbytes化
+3. verifying_key: sender_public_keyから生成する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sender_public_key</strong> (<em>str</em>) – </p></li>
+<li><p><strong>signature</strong> (<em>str</em>) – </p></li>
+<li><p><strong>transaction</strong> (<em>list in dict</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>verified_Key</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<span id="document-utils"></span><div class="section" id="module-utils">
+<span id="utils-module"></span><h2>utils module<a class="headerlink" href="#module-utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="utils.find_neighbours">
+<code class="sig-prename descclassname">utils.</code><code class="sig-name descname">find_neighbours</code><span class="sig-paren">(</span><em class="sig-param">my_host</em>, <em class="sig-param">my_port</em>, <em class="sig-param">start_ip_range</em>, <em class="sig-param">end_ip_range</em>, <em class="sig-param">start_port</em>, <em class="sig-param">end_port</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.find_neighbours" title="Permalink to this definition">¶</a></dt>
+<dd><p>nodeを検索する．</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>my_host</strong> (<em>int</em>) – </p></li>
+<li><p><strong>my_port</strong> (<em>int</em>) – </p></li>
+<li><p><strong>start_ip_range</strong> (<em>int</em>) – </p></li>
+<li><p><strong>end_ip_range</strong> (<em>int</em>) – </p></li>
+<li><p><strong>start_port</strong> (<em>int</em>) – </p></li>
+<li><p><strong>end_port</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>neighbours</strong> – 対象のサーバーを格納する</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.get_host">
+<code class="sig-prename descclassname">utils.</code><code class="sig-name descname">get_host</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils.get_host" title="Permalink to this definition">¶</a></dt>
+<dd><p>socketで自身のホストのIPアドレスを探す</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.is_found_host">
+<code class="sig-prename descclassname">utils.</code><code class="sig-name descname">is_found_host</code><span class="sig-paren">(</span><em class="sig-param">target</em>, <em class="sig-param">port</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.is_found_host" title="Permalink to this definition">¶</a></dt>
+<dd><p>他のノードが立ち上がっているか調べるsocket</p>
+<p>netword address: AF_INET
+TCP/IP: socket.SOCK_STREAM</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> – </p></li>
+<li><p><strong>port</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p># python blockchain_server.py
+# &gt;&gt;&gt; is_found_host(“127.0.0.1”, 5000)
+# True</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.pprint">
+<code class="sig-prename descclassname">utils.</code><code class="sig-name descname">pprint</code><span class="sig-paren">(</span><em class="sig-param">chains</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.pprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>出力形式</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>chains</strong> (<em>list in dict</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.sorted_dict_by_key">
+<code class="sig-prename descclassname">utils.</code><code class="sig-name descname">sorted_dict_by_key</code><span class="sig-paren">(</span><em class="sig-param">unsorted_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.sorted_dict_by_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>sorted by key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>unsorted_dict</strong> (<em>dict</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>collections.OrderedDict</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">block</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">block2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+<span class="go">46e391c4281c162dc452a58d0a756ec6568ebe3acbd9d3731d1eccc66c23d17b</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">block2</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+<span class="go">3dffaea891e5dbadb390da33bad65f509dd667779330e2720df8165a253462b8</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">sorted_dict_by_key</span><span class="p">(</span><span class="n">block</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+<span class="go">3319a4f151023578ff06b0aa1838ee7ab82082fd6e43c2274ff0713f1ed23d53</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">sorted_dict_by_key</span><span class="p">(</span><span class="n">block2</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+<span class="go">3319a4f151023578ff06b0aa1838ee7ab82082fd6e43c2274ff0713f1ed23d53</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</div>
+<span id="document-wallet_server"></span><div class="section" id="module-wallet_server">
+<span id="wallet-server-module"></span><h2>wallet_server module<a class="headerlink" href="#module-wallet_server" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="wallet_server.calculate_amount">
+<code class="sig-prename descclassname">wallet_server.</code><code class="sig-name descname">calculate_amount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wallet_server.calculate_amount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="wallet_server.create_transaction">
+<code class="sig-prename descclassname">wallet_server.</code><code class="sig-name descname">create_transaction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wallet_server.create_transaction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="wallet_server.create_wallet">
+<code class="sig-prename descclassname">wallet_server.</code><code class="sig-name descname">create_wallet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wallet_server.create_wallet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="wallet_server.index">
+<code class="sig-prename descclassname">wallet_server.</code><code class="sig-name descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wallet_server.index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<span id="document-wallet"></span><div class="section" id="module-wallet">
+<span id="wallet-module"></span><h2>wallet module<a class="headerlink" href="#module-wallet" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="wallet.Transaction">
+<em class="property">class </em><code class="sig-prename descclassname">wallet.</code><code class="sig-name descname">Transaction</code><span class="sig-paren">(</span><em class="sig-param">sender_private_key</em>, <em class="sig-param">sender_public_key</em>, <em class="sig-param">sender_blockchain_address</em>, <em class="sig-param">recipient_blockchain_address</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#wallet.Transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Transactionを構成する機能</p>
+<dl class="attribute">
+<dt id="wallet.Transaction.sender_private_key">
+<code class="sig-name descname">sender_private_key</code><a class="headerlink" href="#wallet.Transaction.sender_private_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="wallet.Transaction.sender_public_key">
+<code class="sig-name descname">sender_public_key</code><a class="headerlink" href="#wallet.Transaction.sender_public_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="wallet.Transaction.sender_blockchain_address">
+<code class="sig-name descname">sender_blockchain_address</code><a class="headerlink" href="#wallet.Transaction.sender_blockchain_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="wallet.Transaction.recipient_blockchain_address">
+<code class="sig-name descname">recipient_blockchain_address</code><a class="headerlink" href="#wallet.Transaction.recipient_blockchain_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="wallet.Transaction.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#wallet.Transaction.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="wallet.Transaction.generate_signature">
+<code class="sig-name descname">generate_signature</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wallet.Transaction.generate_signature" title="Permalink to this definition">¶</a></dt>
+<dd><p>署名を生成する
+ex. wallet A -&gt; wallet B に 1.0送金．
+sender_blockchain_address: wallet Aのblockchain_address
+recipient_blockchain_address: wallet Bのblockchain_address
+value: 1.0</p>
+<p>秘密鍵とtransactionsからsignatureを生成する
+1. transactionsをSHA-256でハッシュ化（bytes）
+2. message: ハッシュ化したtransactionsを16進数文字列化
+3. NIST256pでprivate_keyを作成（bytes）</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wallet_A</span> <span class="o">=</span> <span class="n">Wallet</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wallet_B</span> <span class="o">=</span> <span class="n">Wallet</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Transaction</span><span class="p">(</span><span class="n">wallet_A</span><span class="o">.</span><span class="n">private_key</span><span class="p">,</span> <span class="n">wallet_A</span><span class="o">.</span><span class="n">public_key</span><span class="p">,</span> <span class="n">wallet_A</span><span class="o">.</span><span class="n">blockchain_address</span><span class="p">,</span> <span class="n">wallet_B</span><span class="o">.</span><span class="n">blockchain_address</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">generate_signature</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="wallet.Wallet">
+<em class="property">class </em><code class="sig-prename descclassname">wallet.</code><code class="sig-name descname">Wallet</code><a class="headerlink" href="#wallet.Wallet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>walletを構成する機能</p>
+<dl class="attribute">
+<dt id="wallet.Wallet._private_key">
+<code class="sig-name descname">_private_key</code><a class="headerlink" href="#wallet.Wallet._private_key" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>秘密鍵</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wallet.Wallet._public_key">
+<code class="sig-name descname">_public_key</code><a class="headerlink" href="#wallet.Wallet._public_key" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>公開鍵</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="wallet.Wallet._blockchain_address">
+<code class="sig-name descname">_blockchain_address</code><a class="headerlink" href="#wallet.Wallet._blockchain_address" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ブロックチェーンアドレス</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="wallet.Wallet.blockchain_address">
+<em class="property">property </em><code class="sig-name descname">blockchain_address</code><a class="headerlink" href="#wallet.Wallet.blockchain_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="wallet.Wallet.generate_blockchain_address">
+<code class="sig-name descname">generate_blockchain_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wallet.Wallet.generate_blockchain_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>blockchain_addressを作るための仕様</p>
+<ol class="arabic simple">
+<li><p>ECDSAを用いて楕円曲線から公開鍵となる値を計算する</p></li>
+<li><dl class="simple">
+<dt>公開鍵をSHA-256でハッシュ化（bytes）</dt><dd><p>sha256_bpk_digest: bytes</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ハッシュ値（SHA-256）をRipemd160でハッシュ化する</dt><dd><p>ripemd160_bpk_hex（payload）: 16進数文字列</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>プレフィックスとして16進数で”00”を先頭に加える</dt><dd><p>network_bitcoin_public_key_bytes: bytes</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SHA-256で二重ハッシュ化</dt><dd><p>sha256_hex: 16進数文字列</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>checksum</dt><dd><p>sha256_hexの前から8バイトをチェック</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>公開鍵とchecksumを組み合わせる</dt><dd><p>address_hex: プレフィックス（SHA-256x2） + payload（SHA-256+Ripemd160）+ checksum（utf-8で文字列化）</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Base58（人が読みやすい値だけで形成された文字列にエンコード）でエンコード</dt><dd><p>blockchain_address: utf-8</p>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wallet_A</span> <span class="o">=</span> <span class="n">Wallet</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">public_key_bytes</span> <span class="o">=</span> <span class="n">wallet_A</span><span class="o">.</span><span class="n">_public_key</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sha256_bpk</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">public_key_bytes</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sha256_bpk_digest</span> <span class="o">=</span> <span class="n">sha256_bpk</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sha256_bpk_hex</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sha256_bpk_digest</span><span class="p">,</span> <span class="s2">&quot;hex&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ripemd160_bpk</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;ripemd160&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ripemd160_bpk</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">sha256_bpk_digest</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ripemd160_bpk_digest</span> <span class="o">=</span> <span class="n">ripemd160_bpk</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ripemd160_bpk_hex</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">ripemd160_bpk_digest</span><span class="p">,</span> <span class="s2">&quot;hex&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">network_byte</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;00&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">network_bitcoin_public_key</span> <span class="o">=</span> <span class="n">network_byte</span> <span class="o">+</span> <span class="n">ripemd160_bpk_hex</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">network_bitcoin_public_key_bytes</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">network_bitcoin_public_key</span><span class="p">,</span> <span class="s2">&quot;hex&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sha256_bpk</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">network_bitcoin_public_key_bytes</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sha256_bpk_digest</span> <span class="o">=</span> <span class="n">sha256_bpk</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sha256_2_nbpk</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">sha256_bpk_digest</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sha256_2_nbpk_digest</span> <span class="o">=</span> <span class="n">sha256_2_nbpk</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sha256_hex</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sha256_2_nbpk_digest</span><span class="p">,</span> <span class="s2">&quot;hex&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">checksum</span> <span class="o">=</span> <span class="n">sha256_hex</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">address_hex</span> <span class="o">=</span> <span class="p">(</span><span class="n">network_bitcoin_public_key</span> <span class="o">+</span> <span class="n">checksum</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blockchain_address</span> <span class="o">=</span> <span class="n">base58</span><span class="o">.</span><span class="n">b58encode</span><span class="p">(</span><span class="n">binascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="n">address_hex</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blockchain_address</span> <span class="o">=</span> <span class="n">base58</span><span class="o">.</span><span class="n">b58encode</span><span class="p">(</span><span class="n">address_hex</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="wallet.Wallet.private_key">
+<em class="property">property </em><code class="sig-name descname">private_key</code><a class="headerlink" href="#wallet.Wallet.private_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>文字列にして16進数表示</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wallet.Wallet.public_key">
+<em class="property">property </em><code class="sig-name descname">public_key</code><a class="headerlink" href="#wallet.Wallet.public_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>文字列にして16進数表示</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, inishiyama
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
